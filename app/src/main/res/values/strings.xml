@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mis poest vaja on?</string>
+    <string name="tab_text_1">To-Do</string>
+    <string name="tab_text_2">Osta Poest</string>
+    <string name="tab_text_3">Retseptid</string>
+    <string name="action_settings">Seaded</string>
+    <string name="section_format">Hei: %1$d</string>
+</resources>
