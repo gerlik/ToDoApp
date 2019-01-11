@@ -17,8 +17,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--Splash-->
     <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/uudised</item>
+        <item name="android:windowBackground">@drawable/ic_launcher_foreground</item>
     </style>
 
 </resources>

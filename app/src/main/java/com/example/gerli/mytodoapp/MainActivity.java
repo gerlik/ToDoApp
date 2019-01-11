@@ -1,23 +1,34 @@
 package com.example.gerli.mytodoapp;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+// TODO: ToDos, array of arrays
+// TODO: ToDos, array of arrays + NUPP
+// TODO: ToDos, array of arrays x DELETE NUPP
+// TODO: Checkboxes
+// TODO: Shopping list, array of arrays
+// TODO: Shopping list, categories
+// TODO: Recipes list, array of arrays
+// TODO: Recipes list, rating
+// TODO: Recipes list, shopping list**
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private EditText itemET;
+    private Button btn;
+    private ListView itemsList;
+
+    private ArrayList<String> items;
+    private ArrayAdapter<String> adapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -43,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -58,14 +73,16 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
+/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
     }
 
@@ -90,6 +107,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+/*        switch(view.getId()) {
+            case R.id.checkbox_meat
+                if (checked)
+                // Put some meat on the sandwich
+            else
+                // Remove the meat
+                break;
+        }*/
     }
 
     /**
@@ -161,4 +193,5 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
     }
+
 }
